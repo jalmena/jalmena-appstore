@@ -1,0 +1,54 @@
+# Tabernacle — your sacred repository of guitar tabs.
+#
+# This file is the store's, not the project's. The project's own compose.yaml
+# mounts ./data and is meant for `docker compose up -d` in a checkout; this one
+# mounts the path CasaOS creates and carries the metadata the store protocol
+# asks for. Two audiences, two files.
+name: tabernacle
+
+services:
+  tabernacle:
+    image: ghcr.io/jalmena/tabernacle:0.4.0
+    container_name: tabernacle
+    restart: unless-stopped
+
+    ports:
+      - target: 8080
+        published: "8080"
+        protocol: tcp
+
+    volumes:
+      # Everything Tabernacle owns lives here: songs/, trash/ and the index.
+      # The songs stay plain .song text files, so backing up is copying this
+      # directory and nothing else.
+      - /DATA/AppData/tabernacle/data:/data
+
+    environment:
+      # Set these to whoever owns the directory above. On a NAS this is usually
+      # the difference between a working install and a permissions error.
+      PUID: "1000"
+      PGID: "1000"
+      TZ: UTC
+      # The interface language for anybody who has not chosen one. Nineteen are
+      # available, and each person can pick their own once they have an account.
+      TABERNACLE_LANG: en
+
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8080/healthz"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+
+    # CasaOS reads this to label each field in the install dialog. Without it the
+    # dialog shows the raw variable names, which say nothing to whoever installs.
+x-casaos:
+  id: io.github.jalmena.tabernacle
+  main: tabernacle
+  index: /
+  port_map: "8080"
+  scheme: http
+  icon: https://cdn.jsdelivr.net/gh/jalmena/tabernacle-appstore@gh-pages/apps/io.github.jalmena.tabernacle/assets/icon.svg
+  version: "0.4.0"
+  title:
+    en_US: Tabernacle

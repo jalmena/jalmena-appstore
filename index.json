@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "updated_at": "2026-08-24T12:27:23Z",
+  "app_count": 1,
+  "base_url": "https://cdn.jsdelivr.net/gh/jalmena/tabernacle-appstore@gh-pages",
+  "apps": [
+    {
+      "id": "io.github.jalmena.tabernacle",
+      "title": "Tabernacle",
+      "tagline": "Your sacred repository of guitar tabs",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "jalmena",
+      "developer": "jalmena",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/io.github.jalmena.tabernacle/assets/icon.svg",
+      "thumbnail": "/apps/io.github.jalmena.tabernacle/assets/thumbnail.webp",
+      "compose_url": "/apps/io.github.jalmena.tabernacle/docker-compose.yml",
+      "meta_url": "/apps/io.github.jalmena.tabernacle/meta.json",
+      "content_hash": "7f59ea76",
+      "version": "0.4.0"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+ghcr.io/jalmena/tabernacle:0.4.0 sha256:36d1cc9aa86954ee8a160cc6af0e5fc6524d7f5783653fedf4288e5b0cdb4f91

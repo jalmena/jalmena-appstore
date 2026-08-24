@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img"
+     aria-label="Tabernacle">
+  <title>Tabernacle</title>
+  <!-- A chord grid, which is the one picture this application is about: the nut
+       across the top, four strings down, two fingers on.
+       Three decisions, all of them about how this is really seen.
+       The colours are the wordmark's: "Taber" pale, "nacle" orange. The
+       structure is the pale half and the fingers are the orange one, so the
+       icon and the header are the same idea twice.
+       The orange is the chord token, the one "nacle" is set in, and not the
+       accent token, the stronger one the buttons and the fretboard dots use.
+       Both are the application's; only one is the wordmark's, and a mark that
+       sits beside the wordmark has to be that one, or the identity carries two
+       oranges.
+       There are no fret lines, because at forty-eight pixels in a dock they turn
+       to mush and take the dots with them.
+       The dots sit on the two inner strings, so they stay inside the rectangle
+       instead of hanging off its edge like balloons. -->
+  <rect width="512" height="512" rx="112" fill="#201e1b"/>
+  <g fill="#e8e4dc">
+    <rect x="122" y="152" width="19" height="240" rx="4"/>
+    <rect x="206" y="152" width="19" height="240" rx="4"/>
+    <rect x="290" y="152" width="19" height="240" rx="4"/>
+    <rect x="374" y="152" width="19" height="240" rx="4"/>
+    <rect x="122" y="132" width="271" height="38" rx="8"/>
+  </g>
+  <g fill="#fdba74">
+    <circle cx="215.5" cy="245" r="38"/>
+    <circle cx="299.5" cy="337" r="38"/>
+  </g>
+</svg>
