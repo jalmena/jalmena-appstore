@@ -2,14 +2,12 @@
   "version": 2,
   "store_id": "jalmena-tabernacle",
   "name": {
-    "en_US": "Tabernacle",
-    "es_ES": "Tabernacle"
+    "en_us": "Tabernacle"
   },
   "description": {
-    "en_US": "The store for Tabernacle, a self-hosted guitar songbook whose songs are plain text files in a directory you own.",
-    "es_ES": "El store de Tabernacle, un cancionero de guitarra autoalojado cuyas canciones son archivos de texto en un directorio tuyo."
+    "en_us": "The store for Tabernacle, a self-hosted guitar songbook whose songs are plain text files in a directory you own."
   },
   "maintainer": "jalmena",
   "url": "https://github.com/jalmena/tabernacle",
-  "icon": "https://raw.githubusercontent.com/jalmena/tabernacle/main/assets/icon.svg"
+  "icon": "https://raw.githubusercontent.com/jalmena/tabernacle-appstore/main/Apps/Tabernacle/icon.svg"
 }

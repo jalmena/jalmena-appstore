@@ -38,7 +38,7 @@ Apps/Tabernacle/
   screenshot-1..3.png   library, song sheet, chord page
 category-list.json        the one category this store uses
 store-config.json         who this store is
-supported-languages.json  which locales the build may emit
+supported-languages.json  which locales the build may emit (English only)
 scripts/build.sh          build dist/ locally, the way the release does
 ```
 
@@ -60,6 +60,15 @@ Two details of that file are deliberate and easy to undo by accident:
 - **Locale keys are lowercase** (`en_us`, not `en_US`). CasaOS looks up
   `en_us` literally, and the v2 build normalises lowercase to `en_US` on its way
   into `index.json`. Written this way, one file serves both.
+- **Everything shown to whoever installs is English.** CasaOS falls back to
+  `en_us` when it has no entry for the reader's language, so one language here
+  is one language everywhere, rather than a card that reads Spanish on one
+  machine and English on the next. The application itself still speaks
+  nineteen.
+- **The web interface is published on 8440**, because A440 is the note
+  everything tunes to and because nothing else claims it: no app in the CasaOS
+  store or the BigBear store publishes it, and IANA has it unassigned. Inside
+  the container Tabernacle listens on 8080.
 - **Assets are absolute URLs.** A v2 build resolves a bare `thumbnail.png`
   against its base URL; CasaOS, reading the compose straight out of the archive,
   has no base URL to resolve it against.
