@@ -1,0 +1,33 @@
+# Publishing is deploying dist/ to gh-pages. That branch is what a CasaOS user
+# subscribes to, so a tag here is what reaches their App Store.
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Build the store
+        uses: IceWhaleTech/build-appstore-action@v1
+        with:
+          source: .
+          output: dist
+          base-url: https://cdn.jsdelivr.net/gh/${{ github.repository }}@gh-pages
+          cache-file: .cache/build_appstore/image-size-cache.json
+          digest-cache-file: .cache/build_appstore/image-digest-cache.json
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./dist

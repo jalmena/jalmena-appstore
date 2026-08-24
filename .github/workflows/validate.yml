@@ -1,0 +1,36 @@
+# Every change is built before it is merged, because the only way to know a
+# store still builds is to build it.
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Check the compose is compose
+        run: docker compose -f Apps/Tabernacle/docker-compose.yml config -q
+
+      - name: Build the store
+        uses: IceWhaleTech/build-appstore-action@v1
+        with:
+          source: .
+          output: dist
+          base-url: https://cdn.jsdelivr.net/gh/${{ github.repository }}@gh-pages
+          cache-file: .cache/build_appstore/image-size-cache.json
+          digest-cache-file: .cache/build_appstore/image-digest-cache.json
+
+      - name: Say what came out
+        run: |
+          test -f dist/index.json
+          test -f dist/store.json
+          echo '### Built' >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          find dist -type f | sort >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"

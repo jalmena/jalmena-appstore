@@ -1,0 +1,3 @@
+# Build output, not source. See docs/quick-start/repository-structure.md upstream.
+/dist/
+/.cache/
