@@ -40,18 +40,55 @@ services:
       start_period: 10s
       retries: 3
 
+    # CasaOS reads this to label each field in the install dialog. Without it the
+    # dialog shows the raw variable names, which say nothing to whoever installs.
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_us: User id that owns the data directory. `id -u` on the host.
+            es_es: Id de usuario dueño del directorio de datos. `id -u` en el anfitrión.
+            zh_cn: 数据目录属主的用户 id，在主机上用 `id -u` 查看。
+        - container: PGID
+          description:
+            en_us: Group id that owns the data directory. `id -g` on the host.
+            es_es: Id de grupo dueño del directorio de datos. `id -g` en el anfitrión.
+            zh_cn: 数据目录属主的组 id，在主机上用 `id -g` 查看。
+        - container: TZ
+          description:
+            en_us: Time zone, used for the dates shown on songs.
+            es_es: Zona horaria, para las fechas que se muestran en las canciones.
+            zh_cn: 时区，用于歌曲上显示的日期。
+        - container: TABERNACLE_LANG
+          description:
+            en_us: Interface language for anybody who has not chosen one. One of es, en, ca, gl, eu, pt, fr, it, de, nl, pl, ru, tr, id, zh, ja, ko, hi, ar.
+            es_es: Idioma de la interfaz para quien no haya elegido uno. Uno de es, en, ca, gl, eu, pt, fr, it, de, nl, pl, ru, tr, id, zh, ja, ko, hi, ar.
+            zh_cn: 尚未选择语言的人看到的界面语言。可选 es、en、ca、gl、eu、pt、fr、it、de、nl、pl、ru、tr、id、zh、ja、ko、hi、ar。
+      ports:
+        - container: "8080"
+          description:
+            en_us: Web interface.
+            es_es: Interfaz web.
+            zh_cn: 网页界面。
+      volumes:
+        - container: /data
+          description:
+            en_us: Songs, deleted songs and the index. Back this up and you have backed up everything.
+            es_es: Canciones, papelera e índice. Respaldando esto lo has respaldado todo.
+            zh_cn: 歌曲、回收站和索引。备份这里就等于备份了全部。
+
 x-casaos:
   id: io.github.jalmena.tabernacle
   main: tabernacle
   index: /
   port_map: "8080"
   scheme: http
-  icon: https://raw.githubusercontent.com/jalmena/tabernacle/main/assets/icon.svg
-  thumbnail: thumbnail.png
+  icon: https://raw.githubusercontent.com/jalmena/tabernacle-appstore/main/Apps/Tabernacle/icon.svg
+  thumbnail: https://raw.githubusercontent.com/jalmena/tabernacle-appstore/main/Apps/Tabernacle/thumbnail.png
   screenshot_link:
-    - screenshot-1.png
-    - screenshot-2.png
-    - screenshot-3.png
+    - https://raw.githubusercontent.com/jalmena/tabernacle-appstore/main/Apps/Tabernacle/screenshot-1.png
+    - https://raw.githubusercontent.com/jalmena/tabernacle-appstore/main/Apps/Tabernacle/screenshot-2.png
+    - https://raw.githubusercontent.com/jalmena/tabernacle-appstore/main/Apps/Tabernacle/screenshot-3.png
   author: jalmena
   developer: jalmena
   category: Media
@@ -66,31 +103,31 @@ x-casaos:
   docs: https://github.com/jalmena/tabernacle/blob/main/README.md
 
   title:
-    en_US: Tabernacle
+    en_us: Tabernacle
 
   tagline:
-    en_US: Your sacred repository of guitar tabs
-    es_ES: Tu sagrado repositorio de tablaturas
-    ca_ES: El teu sagrat repositori de tabulatures
-    gl_ES: O teu sagrado repositorio de tabulaturas
-    eu_ES: Gitarra-tablaturen zure gordailu sakratua
-    pt_PT: O teu sagrado repositório de tablaturas
-    fr_FR: Votre sanctuaire de tablatures de guitare
-    it_IT: Il tuo sacro archivio di tablature
-    de_DE: Deine heilige Sammlung von Gitarrengriffen
-    nl_NL: Jouw heilige verzameling gitaartabs
-    pl_PL: Twój święty zbiór tabulatur gitarowych
-    ru_RU: Ваше хранилище гитарных табулатур
-    tr_TR: Gitar tablarının kutsal deposu
-    id_ID: Gudang kunci gitar milikmu sendiri
-    zh_CN: 属于你自己的吉他谱库
-    ja_JP: あなたのためのギター譜の書庫
-    ko_KR: 나만의 기타 악보 서재
-    hi_IN: आपका अपना गिटार टैब संग्रह
-    ar_SA: مكتبتك المقدسة لنوتات الغيتار
+    en_us: Your sacred repository of guitar tabs
+    es_es: Tu sagrado repositorio de tablaturas
+    ca_es: El teu sagrat repositori de tabulatures
+    gl_es: O teu sagrado repositorio de tabulaturas
+    eu_es: Gitarra-tablaturen zure gordailu sakratua
+    pt_pt: O teu sagrado repositório de tablaturas
+    fr_fr: Votre sanctuaire de tablatures de guitare
+    it_it: Il tuo sacro archivio di tablature
+    de_de: Deine heilige Sammlung von Gitarrengriffen
+    nl_nl: Jouw heilige verzameling gitaartabs
+    pl_pl: Twój święty zbiór tabulatur gitarowych
+    ru_ru: Ваше хранилище гитарных табулатур
+    tr_tr: Gitar tablarının kutsal deposu
+    id_id: Gudang kunci gitar milikmu sendiri
+    zh_cn: 属于你自己的吉他谱库
+    ja_jp: あなたのためのギター譜の書庫
+    ko_kr: 나만의 기타 악보 서재
+    hi_in: आपका अपना गिटार टैब संग्रह
+    ar_sa: مكتبتك المقدسة لنوتات الغيتار
 
   description:
-    en_US: |
+    en_us: |
       A self-hosted guitar songbook. Your songs are plain .song text files in a directory you own — back them up, edit them by hand, put them in git. The database is only an index and can be deleted at any time; it rebuilds from the files.
 
       Transpose a sheet and the tablature moves with it. Click any chord to see how it is held, with alternative shapes. Open the Chords section to draw a shape on a fretboard and be told what chord it is, or name a chord and see every way of playing it, easiest first. Print a real A4 sheet, or pick any set of songs and print them as one songbook.
@@ -98,7 +135,7 @@ x-casaos:
       Reading needs no account. Changing anything does, once you have made one. Nineteen interface languages, note names as C-D-E or Do-Re-Mi, and a light or dark theme, all chosen per person.
 
       Works offline, sends nothing anywhere, has no telemetry. Tabernacle manages music you provide; it does not supply, license or distribute any musical work, and it does not download anything from anywhere.
-    es_ES: |
+    es_es: |
       Un cancionero de guitarra autoalojado. Tus canciones son archivos de texto .song en un directorio tuyo: respáldalos, edítalos a mano, ponlos en git. La base de datos es solo un índice y se puede borrar cuando quieras; se reconstruye desde los archivos.
 
       Transporta una hoja y la tablatura va con ella. Pulsa cualquier acorde para ver cómo se coloca, con posiciones alternativas. En la sección Acordes dibujas una posición en el mástil y se te dice qué acorde es, o pides un acorde y ves todas las formas de tocarlo, de la más fácil en adelante. Imprime una hoja A4 de verdad, o elige las canciones que quieras e imprímelas como un solo cancionero.
@@ -106,7 +143,7 @@ x-casaos:
       Leer no necesita cuenta. Cambiar algo sí, en cuanto creas una. Diecinueve idiomas de interfaz, notación C-D-E o Do-Re-Mi, y tema claro u oscuro, cada cual el suyo.
 
       Funciona sin conexión, no envía nada a ninguna parte y no tiene telemetría. Tabernacle gestiona música que tú aportas; no proporciona, licencia ni distribuye ninguna obra musical, y no descarga nada de ningún sitio.
-    zh_CN: |
+    zh_cn: |
       一个自托管的吉他歌本。你的歌曲就是你自己目录下的 .song 纯文本文件——可以备份、手动编辑、放进 git。数据库只是索引，随时可以删掉，它会从文件重建。
 
       移调时六线谱跟着一起走。点任何一个和弦就能看到怎么按，还有别的按法。在「和弦」一节里，你可以在指板上画一个指法，我们告诉你那是什么和弦；或者说出一个和弦，看到它所有的按法，由易到难。可以打印真正的 A4 谱，也可以挑一组歌打印成一本歌本。
@@ -117,21 +154,21 @@ x-casaos:
 
   tips:
     before_install:
-      en_US: |
+      en_us: |
         Set PUID and PGID to the owner of /DATA/AppData/tabernacle/data, or the container may not be able to write to it. On the host, `id -u` and `id -g` will tell you.
 
-        Put your .song files in data/songs as Artist/Title.song, or import them from the web interface. Reading needs no account; press Acceder to claim the instance and create the first administrator.
-      es_ES: |
+        Put your .song files in data/songs as Artist/Title.song, or import them from the web interface. Reading needs no account; press Sign in to claim the instance and create the first administrator.
+      es_es: |
         Ajusta PUID y PGID al propietario de /DATA/AppData/tabernacle/data, o el contenedor podría no poder escribir en él. En el anfitrión, `id -u` e `id -g` te lo dicen.
 
         Pon tus archivos .song en data/songs como Artista/Título.song, o impórtalos desde la interfaz web. Leer no necesita cuenta; pulsa Acceder para reclamar la instancia y crear el primer administrador.
-      zh_CN: |
+      zh_cn: |
         请把 PUID 和 PGID 设成 /DATA/AppData/tabernacle/data 的属主，否则容器可能无法写入。在主机上用 `id -u` 和 `id -g` 查看。
 
-        把你的 .song 文件按 歌手/标题.song 放进 data/songs，或者从网页界面导入。阅读不需要账号；点「Acceder」接管这个实例并创建第一个管理员。
+        把你的 .song 文件按 歌手/标题.song 放进 data/songs，或者从网页界面导入。阅读不需要账号；点「登录」接管这个实例并创建第一个管理员。
 
   release_notes:
-    en_US: |
+    en_us: |
       Nineteen interface languages, right to left where it belongs, and Tabernacle has an icon.
-    es_ES: |
+    es_es: |
       Diecinueve idiomas de interfaz, de derecha a izquierda donde corresponde, y Tabernacle ya tiene icono.

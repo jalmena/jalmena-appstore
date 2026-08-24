@@ -26,10 +26,16 @@ jobs:
           cache-file: .cache/build_appstore/image-size-cache.json
           digest-cache-file: .cache/build_appstore/image-digest-cache.json
 
+      # CasaOS subscribes to a zip archive, ZimaOS to index.json. Both ship on
+      # gh-pages so one branch serves whichever client asks.
+      - name: Pack the archive CasaOS subscribes to
+        run: zip -qr dist/tabernacle-appstore.zip Apps category-list.json
+
       - name: Say what came out
         run: |
           test -f dist/index.json
           test -f dist/store.json
+          test -f dist/tabernacle-appstore.zip
           echo '### Built' >> "$GITHUB_STEP_SUMMARY"
           echo '```' >> "$GITHUB_STEP_SUMMARY"
           find dist -type f | sort >> "$GITHUB_STEP_SUMMARY"
