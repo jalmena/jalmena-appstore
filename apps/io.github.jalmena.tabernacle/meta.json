@@ -18,21 +18,21 @@
   "support": "https://github.com/jalmena/tabernacle/issues",
   "docs": "https://github.com/jalmena/tabernacle/blob/main/README.md",
   "tagline": "Your sacred repository of guitar tabs",
-  "description": "A self-hosted guitar songbook. Your songs are plain .song text files in a directory you own — back them up, edit them by hand, put them in git. The database is only an index and can be deleted at any time; it rebuilds from the files.\n\nTranspose a sheet and the tablature moves with it. Click any chord to see how it is held, with alternative shapes. Open the Chords section to draw a shape on a fretboard and be told what chord it is, or name a chord and see every way of playing it, easiest first. Print a real A4 sheet, or pick any set of songs and print them as one songbook.\n\nReading needs no account. Changing anything does, once you have made one. Nineteen interface languages, note names as C-D-E or Do-Re-Mi, and a light or dark theme, all chosen per person.\n\nWorks offline, sends nothing anywhere, has no telemetry. Tabernacle manages music you provide; it does not supply, license or distribute any musical work, and it does not download anything from anywhere.\n",
+  "description": "A self-hosted guitar songbook. Your songs are plain .song text files in a directory you own — back them up, edit them by hand, put them in git. The database is only an index and can be deleted at any time; it rebuilds from the files.\n\nTranspose a sheet and the tablature moves with it. Click any chord to see how it is held, with alternative shapes. Open the Chords section to draw a shape on a fretboard and be told what chord it is, or name a chord and see every way of playing it, easiest first. Print a real A4 sheet, or pick any set of songs and print them as one songbook.\n\nPress Play and the sheet scrolls itself, big enough to read from a stand, so your hands can stay on the guitar. A song full of barre chords is told where to put a capo so it is not: same sound, easier shapes.\n\nReading needs no account. Changing anything does, once you have made one. Nineteen interface languages, note names as C-D-E or Do-Re-Mi, and a light or dark theme, all chosen per person.\n\nWorks offline, sends nothing anywhere, has no telemetry. Tabernacle manages music you provide; it does not supply, license or distribute any musical work, and it does not download anything from anywhere.\n",
   "tips": {
     "before_install": "Set PUID and PGID to the owner of /DATA/AppData/tabernacle/data, or the container may not be able to write to it. On the host, `id -u` and `id -g` will tell you.\n\nPut your .song files in data/songs as Artist/Title.song, or import them from the web interface. Reading needs no account; press Sign in to claim the instance and create the first administrator.\n"
   },
   "title": "Tabernacle",
-  "release_note": "Nineteen interface languages, right to left where it belongs, and Tabernacle has an icon.\n",
+  "release_note": "Play mode scrolls a sheet by itself while your hands are on the guitar, and Tabernacle now says where to put a capo so a barred song becomes open chords.\n",
   "base_url": "https://cdn.jsdelivr.net/gh/jalmena/tabernacle-appstore@gh-pages",
   "id": "io.github.jalmena.tabernacle",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "categories": [
     "media"
   ],
   "min_memory": 0,
   "min_image_size": {
-    "amd64": 10642511,
-    "arm64": 10547938
+    "amd64": 10658416,
+    "arm64": 10566086
   }
 }
