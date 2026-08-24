@@ -4,6 +4,11 @@
 # mounts ./data and is meant for `docker compose up -d` in a checkout; this one
 # mounts the path CasaOS creates and carries the metadata the store protocol
 # asks for. Two audiences, two files.
+#
+# Everything shown to whoever installs is English only. CasaOS falls back to
+# en_us when it has no entry for the reader's language, so one language here
+# means one language on every machine, rather than a card that is Spanish in
+# one place and English in another.
 name: tabernacle
 
 services:
@@ -13,8 +18,12 @@ services:
     restart: unless-stopped
 
     ports:
+      # 8440 on the host because A440 is the note everything tunes to, and
+      # because nothing else claims it: no app in the CasaOS store or the
+      # BigBear store publishes it, and IANA has it unassigned. Inside the
+      # container Tabernacle listens on 8080 and always will.
       - target: 8080
-        published: "8080"
+        published: "8440"
         protocol: tcp
 
     volumes:
@@ -46,7 +55,7 @@ x-casaos:
   id: io.github.jalmena.tabernacle
   main: tabernacle
   index: /
-  port_map: "8080"
+  port_map: "8440"
   scheme: http
   icon: https://cdn.jsdelivr.net/gh/jalmena/tabernacle-appstore@gh-pages/apps/io.github.jalmena.tabernacle/assets/icon.svg
   version: "0.4.0"

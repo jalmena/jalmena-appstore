@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-08-24T12:27:23Z",
+  "updated_at": "2026-08-24T13:29:32Z",
   "app_count": 1,
   "base_url": "https://cdn.jsdelivr.net/gh/jalmena/tabernacle-appstore@gh-pages",
   "apps": [
@@ -22,7 +22,7 @@
       "thumbnail": "/apps/io.github.jalmena.tabernacle/assets/thumbnail.webp",
       "compose_url": "/apps/io.github.jalmena.tabernacle/docker-compose.yml",
       "meta_url": "/apps/io.github.jalmena.tabernacle/meta.json",
-      "content_hash": "7f59ea76",
+      "content_hash": "d57c07d7",
       "version": "0.4.0"
     }
   ]

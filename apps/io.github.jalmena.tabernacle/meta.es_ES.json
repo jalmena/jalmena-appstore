@@ -1,9 +1,0 @@
-{
-  "id": "io.github.jalmena.tabernacle",
-  "description": "Un cancionero de guitarra autoalojado. Tus canciones son archivos de texto .song en un directorio tuyo: respáldalos, edítalos a mano, ponlos en git. La base de datos es solo un índice y se puede borrar cuando quieras; se reconstruye desde los archivos.\n\nTransporta una hoja y la tablatura va con ella. Pulsa cualquier acorde para ver cómo se coloca, con posiciones alternativas. En la sección Acordes dibujas una posición en el mástil y se te dice qué acorde es, o pides un acorde y ves todas las formas de tocarlo, de la más fácil en adelante. Imprime una hoja A4 de verdad, o elige las canciones que quieras e imprímelas como un solo cancionero.\n\nLeer no necesita cuenta. Cambiar algo sí, en cuanto creas una. Diecinueve idiomas de interfaz, notación C-D-E o Do-Re-Mi, y tema claro u oscuro, cada cual el suyo.\n\nFunciona sin conexión, no envía nada a ninguna parte y no tiene telemetría. Tabernacle gestiona música que tú aportas; no proporciona, licencia ni distribuye ninguna obra musical, y no descarga nada de ningún sitio.\n",
-  "release_note": "Diecinueve idiomas de interfaz, de derecha a izquierda donde corresponde, y Tabernacle ya tiene icono.\n",
-  "tagline": "Tu sagrado repositorio de tablaturas",
-  "tips": {
-    "before_install": "Ajusta PUID y PGID al propietario de /DATA/AppData/tabernacle/data, o el contenedor podría no poder escribir en él. En el anfitrión, `id -u` e `id -g` te lo dicen.\n\nPon tus archivos .song en data/songs como Artista/Título.song, o impórtalos desde la interfaz web. Leer no necesita cuenta; pulsa Acceder para reclamar la instancia y crear el primer administrador.\n"
-  }
-}
