@@ -13,7 +13,7 @@ name: tabernacle
 
 services:
   tabernacle:
-    image: ghcr.io/jalmena/tabernacle:0.4.0
+    image: ghcr.io/jalmena/tabernacle:0.5.0
     container_name: tabernacle
     restart: unless-stopped
 
@@ -97,7 +97,7 @@ x-casaos:
   architectures:
     - amd64
     - arm64
-  version: "0.4.0"
+  version: "0.5.0"
   update_at: "2026-08-24"
   website: https://github.com/jalmena/tabernacle
   repo: https://github.com/jalmena/tabernacle
@@ -116,6 +116,8 @@ x-casaos:
 
       Transpose a sheet and the tablature moves with it. Click any chord to see how it is held, with alternative shapes. Open the Chords section to draw a shape on a fretboard and be told what chord it is, or name a chord and see every way of playing it, easiest first. Print a real A4 sheet, or pick any set of songs and print them as one songbook.
 
+      Press Play and the sheet scrolls itself, big enough to read from a stand, so your hands can stay on the guitar. A song full of barre chords is told where to put a capo so it is not: same sound, easier shapes.
+
       Reading needs no account. Changing anything does, once you have made one. Nineteen interface languages, note names as C-D-E or Do-Re-Mi, and a light or dark theme, all chosen per person.
 
       Works offline, sends nothing anywhere, has no telemetry. Tabernacle manages music you provide; it does not supply, license or distribute any musical work, and it does not download anything from anywhere.
@@ -129,4 +131,4 @@ x-casaos:
 
   release_notes:
     en_us: |
-      Nineteen interface languages, right to left where it belongs, and Tabernacle has an icon.
+      Play mode scrolls a sheet by itself while your hands are on the guitar, and Tabernacle now says where to put a capo so a barred song becomes open chords.
