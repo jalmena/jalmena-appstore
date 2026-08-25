@@ -13,7 +13,7 @@ name: tabernacle
 
 services:
   tabernacle:
-    image: ghcr.io/jalmena/tabernacle:0.5.0@sha256:c28a5eb611b8206f730786a92f2c92ae34404b46b2c2015a53f72bd75a3c5dce
+    image: ghcr.io/jalmena/tabernacle:0.6.0@sha256:89f7b8800638e200ba2db316c15917ca92b1f53d9b69157ca988ecef33d46485
     container_name: tabernacle
     restart: unless-stopped
 
@@ -58,6 +58,6 @@ x-casaos:
   port_map: "8440"
   scheme: http
   icon: https://cdn.jsdelivr.net/gh/jalmena/tabernacle-appstore@gh-pages/apps/io.github.jalmena.tabernacle/assets/icon.svg
-  version: "0.5.0"
+  version: "0.6.0"
   title:
     en_US: Tabernacle
