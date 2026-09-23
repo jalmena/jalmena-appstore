@@ -57,7 +57,7 @@ x-casaos:
   index: /
   port_map: "8440"
   scheme: http
-  icon: https://cdn.jsdelivr.net/gh/jalmena/tabernacle-appstore@gh-pages/apps/io.github.jalmena.tabernacle/assets/icon.svg
+  icon: https://cdn.jsdelivr.net/gh/jalmena/jalmena-appstore@gh-pages/apps/io.github.jalmena.tabernacle/assets/icon.svg
   version: "0.6.0"
   title:
     en_US: Tabernacle

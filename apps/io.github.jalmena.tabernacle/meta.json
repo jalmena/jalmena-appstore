@@ -24,7 +24,7 @@
   },
   "title": "Tabernacle",
   "release_note": "The chord page can be heard — nylon, steel or a distorted electric — and it now says how hard a shape is to hold, in a word and a number.\n",
-  "base_url": "https://cdn.jsdelivr.net/gh/jalmena/tabernacle-appstore@gh-pages",
+  "base_url": "https://cdn.jsdelivr.net/gh/jalmena/jalmena-appstore@gh-pages",
   "id": "io.github.jalmena.tabernacle",
   "version": "0.6.0",
   "categories": [
