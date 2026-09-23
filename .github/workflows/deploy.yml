@@ -1,0 +1,54 @@
+# Publishing is deploying dist/ to gh-pages. That branch is what CasaOS and ZimaOS
+# subscribe to, so every merge into main is a store release; the gh-pages history
+# is the release log.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Build the store
+        uses: IceWhaleTech/build-appstore-action@v1
+        with:
+          source: .
+          output: dist
+          base-url: https://cdn.jsdelivr.net/gh/${{ github.repository }}@gh-pages
+          cache-file: .cache/build_appstore/image-size-cache.json
+          digest-cache-file: .cache/build_appstore/image-digest-cache.json
+
+      - name: Pack the archives CasaOS subscribes to
+        run: |
+          zip -qr dist/appstore.zip Apps category-list.json
+          cp dist/appstore.zip dist/tabernacle-appstore.zip
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./dist
+          full_commit_message: "deploy: ${{ github.sha }}"
+
+      # jsDelivr caches gh-pages files for up to twelve hours. Purge what the v2
+      # index points at, so compose and metadata never lag the index.
+      - name: Purge the jsDelivr cache
+        run: |
+          cd dist
+          find . -type f ! -name '*.zip' | sed 's#^\./##' | while read -r f; do
+            curl -fsS -o /dev/null "https://purge.jsdelivr.net/gh/${{ github.repository }}@gh-pages/$f" \
+              || echo "purge failed for $f"
+          done

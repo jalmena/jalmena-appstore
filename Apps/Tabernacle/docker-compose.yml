@@ -85,12 +85,12 @@ x-casaos:
   index: /
   port_map: "8440"
   scheme: http
-  icon: https://raw.githubusercontent.com/jalmena/tabernacle-appstore/main/Apps/Tabernacle/icon.svg
-  thumbnail: https://raw.githubusercontent.com/jalmena/tabernacle-appstore/main/Apps/Tabernacle/thumbnail.png
+  icon: https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Tabernacle/icon.svg
+  thumbnail: https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Tabernacle/thumbnail.png
   screenshot_link:
-    - https://raw.githubusercontent.com/jalmena/tabernacle-appstore/main/Apps/Tabernacle/screenshot-1.png
-    - https://raw.githubusercontent.com/jalmena/tabernacle-appstore/main/Apps/Tabernacle/screenshot-2.png
-    - https://raw.githubusercontent.com/jalmena/tabernacle-appstore/main/Apps/Tabernacle/screenshot-3.png
+    - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Tabernacle/screenshot-1.png
+    - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Tabernacle/screenshot-2.png
+    - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Tabernacle/screenshot-3.png
   author: jalmena
   developer: jalmena
   category: Media

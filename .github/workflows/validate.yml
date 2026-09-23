@@ -1,5 +1,5 @@
-# Every change is built before it is merged, because the only way to know a
-# store still builds is to build it.
+# Every change is linted and built before it is merged, because the only way to
+# know a store still builds is to build it.
 name: Validate
 
 on:
@@ -9,13 +9,29 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
 
-      - name: Check the compose is compose
-        run: docker compose -f Apps/Tabernacle/docker-compose.yml config -q
+      - name: Lint every app definition
+        run: |
+          python3 -m pip install --quiet pyyaml
+          python3 scripts/lint_apps.py
+
+      - name: Check every compose is compose
+        run: |
+          for f in Apps/*/docker-compose.yml; do
+            echo "$f"
+            docker compose -f "$f" config -q
+          done
+
+      - name: Check every pinned image exists
+        run: |
+          python3 scripts/lint_apps.py --print-images | while read -r image; do
+            echo "$image"
+            docker manifest inspect "$image" > /dev/null
+          done
 
       - name: Build the store
         uses: IceWhaleTech/build-appstore-action@v1
@@ -26,15 +42,19 @@ jobs:
           cache-file: .cache/build_appstore/image-size-cache.json
           digest-cache-file: .cache/build_appstore/image-digest-cache.json
 
-      # CasaOS subscribes to a zip archive, ZimaOS to index.json. Both ship on
-      # gh-pages so one branch serves whichever client asks.
-      - name: Pack the archive CasaOS subscribes to
-        run: zip -qr dist/tabernacle-appstore.zip Apps category-list.json
+      # CasaOS subscribes to a zip archive, ZimaOS to store.json. The archive is
+      # published under two names: the historical one that existing installations
+      # follow, and the store's own.
+      - name: Pack the archives CasaOS subscribes to
+        run: |
+          zip -qr dist/appstore.zip Apps category-list.json
+          cp dist/appstore.zip dist/tabernacle-appstore.zip
 
       - name: Say what came out
         run: |
           test -f dist/index.json
           test -f dist/store.json
+          test -f dist/appstore.zip
           test -f dist/tabernacle-appstore.zip
           echo '### Built' >> "$GITHUB_STEP_SUMMARY"
           echo '```' >> "$GITHUB_STEP_SUMMARY"

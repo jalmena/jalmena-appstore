@@ -2,12 +2,12 @@
   "version": 2,
   "store_id": "jalmena-tabernacle",
   "name": {
-    "en_us": "Tabernacle"
+    "en_us": "jalmena store"
   },
   "description": {
-    "en_us": "The store for Tabernacle, a self-hosted guitar songbook whose songs are plain text files in a directory you own."
+    "en_us": "jalmena's personal app store for CasaOS and ZimaOS: self-hosted applications, each with its own repository, packaged for one-click installation."
   },
   "maintainer": "jalmena",
-  "url": "https://github.com/jalmena/tabernacle",
-  "icon": "https://raw.githubusercontent.com/jalmena/tabernacle-appstore/main/Apps/Tabernacle/icon.svg"
+  "url": "https://github.com/jalmena/jalmena-appstore",
+  "icon": "https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/store-icon.svg"
 }
