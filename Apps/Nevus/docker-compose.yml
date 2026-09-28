@@ -1,0 +1,108 @@
+# neVus. Because "I think it was smaller" is not data.
+#
+# This file is the store's, not the project's: it mounts the path CasaOS creates and pins the released image.
+# The project's own deploy/compose.yaml is for `docker compose up -d` in a checkout.
+#
+# The x-casaos blocks are extension fields: Docker Compose ignores them, CasaOS uses them to draw an app card.
+# Live camera capture and installation as an app need HTTPS: put your reverse proxy in front and terminate TLS
+# there; uploading photos from the native camera works over plain HTTP too.
+name: nevus
+
+services:
+  nevus:
+    image: ghcr.io/jalmena/nevus:0.1.0-alpha.1
+    container_name: nevus
+    restart: unless-stopped
+    ports:
+      # host:container. Change the host side if 8455 is taken; inside the container neVus listens on 8080.
+      - "8455:8080"
+    volumes:
+      # Everything neVus owns lives here: the database, the photographs, backups and the server secret.
+      - /DATA/AppData/nevus/data:/data
+    environment:
+      # Set to the user that owns the data directory (`id -u`, `id -g` on the host).
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "Europe/Madrid"
+      # Public hostnames the server should answer to (comma-separated). Private addresses, localhost and
+      # .local names are always accepted; unknown public names are refused to block DNS rebinding.
+      # NEVUS_ALLOWED_HOSTS: "nevus.example.com"
+      # External PostgreSQL instead of the built-in SQLite (the operator then backs up the database):
+      # NEVUS_DATABASE_URL: "postgresql+psycopg://nevus:password@db.example.com:5432/nevus"
+      # NEVUS_LOG_LEVEL: "info"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8080/healthz"]
+      interval: 30s
+      timeout: 5s
+      start_period: 15s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: "3.0"
+          memory: 3g
+    x-casaos:
+      volumes:
+        - container: /data
+          description:
+            en_us: The database, the photographs, backups and the server secret. Back this up and you have backed up everything.
+      ports:
+        - container: "8080"
+          description:
+            en_us: Web interface.
+      envs:
+        - container: PUID
+          description:
+            en_us: User id that owns the data directory. Run `id -u` on the host to find it.
+        - container: PGID
+          description:
+            en_us: Group id that owns the data directory. Run `id -g` on the host to find it.
+        - container: TZ
+          description:
+            en_us: Time zone, used for the dates of observations.
+
+x-casaos:
+  id: io.github.jalmena.nevus
+  main: nevus
+  index: /
+  port_map: "8455"
+  scheme: http
+  architectures:
+    - amd64
+    - arm64
+  author: jalmena
+  developer: jalmena
+  category: Others
+  icon: https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/icon.svg
+  thumbnail: https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/thumbnail.png
+  screenshot_link:
+    - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/screenshot-1.png
+    - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/screenshot-2.png
+    - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/screenshot-3.png
+  version: "0.1.0-alpha.1"
+  update_at: "2026-09-28"
+  website: https://github.com/jalmena/nevus
+  repo: https://github.com/jalmena/nevus
+  support: https://github.com/jalmena/nevus/issues
+  docs: https://github.com/jalmena/nevus/blob/main/README.md
+  title:
+    en_us: neVus
+  tagline:
+    en_us: Because "I think it was smaller" is not data.
+  description:
+    en_us: |
+      Self-hosted longitudinal tracking of your moles and skin marks: register them on a body map, photograph them
+      periodically against a physical reference, measure them with their uncertainty, compare observations over time
+      and take a report to your dermatologist. Your photographs never leave your server.
+
+      neVus is a personal documentation and measurement aid. It does not diagnose, screen for, or assess the risk of
+      any disease.
+  tips:
+    before_install:
+      en_us: |
+        Set PUID and PGID to the owner of /DATA/AppData/nevus/data. For live camera capture and installation as an
+        app on your phone, serve neVus over HTTPS through your reverse proxy; uploading photos from the native camera
+        works over plain HTTP.
+  release_notes:
+    en_us: |
+      First alpha: accounts, persons, the body map, marks, dated visits with scrubbed photographs, English and Spanish. Measurement, reminders and reports come next. The data model may still change before 0.1.0.
