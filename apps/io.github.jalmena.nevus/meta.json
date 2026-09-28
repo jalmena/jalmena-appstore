@@ -1,0 +1,38 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "author": "jalmena",
+  "developer": "jalmena",
+  "category": "Others",
+  "thumbnail": "/apps/io.github.jalmena.nevus/assets/thumbnail.webp",
+  "screenshot_link": [
+    "/apps/io.github.jalmena.nevus/assets/screenshot-1.webp",
+    "/apps/io.github.jalmena.nevus/assets/screenshot-2.webp",
+    "/apps/io.github.jalmena.nevus/assets/screenshot-3.webp"
+  ],
+  "update_at": "2026-09-28",
+  "website": "https://github.com/jalmena/nevus",
+  "repo": "https://github.com/jalmena/nevus",
+  "support": "https://github.com/jalmena/nevus/issues",
+  "docs": "https://github.com/jalmena/nevus/blob/main/README.md",
+  "tagline": "Because \"I think it was smaller\" is not data.",
+  "description": "Self-hosted longitudinal tracking of your moles and skin marks: register them on a body map, photograph them\nperiodically against a physical reference, measure them with their uncertainty, compare observations over time\nand take a report to your dermatologist. Your photographs never leave your server.\n\nneVus is a personal documentation and measurement aid. It does not diagnose, screen for, or assess the risk of\nany disease.\n",
+  "tips": {
+    "before_install": "Set PUID and PGID to the owner of /DATA/AppData/nevus/data. For live camera capture and installation as an\napp on your phone, serve neVus over HTTPS through your reverse proxy; uploading photos from the native camera\nworks over plain HTTP.\n"
+  },
+  "title": "neVus",
+  "release_note": "First alpha: accounts, persons, the body map, marks, dated visits with scrubbed photographs, English and Spanish. Measurement, reminders and reports come next. The data model may still change before 0.1.0.\n",
+  "base_url": "https://cdn.jsdelivr.net/gh/jalmena/jalmena-appstore@gh-pages",
+  "id": "io.github.jalmena.nevus",
+  "version": "0.1.0-alpha.1",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 89216766,
+    "arm64": 91346352
+  }
+}

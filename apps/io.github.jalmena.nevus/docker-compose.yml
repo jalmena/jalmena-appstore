@@ -1,0 +1,53 @@
+# neVus. Because "I think it was smaller" is not data.
+#
+# This file is the store's, not the project's: it mounts the path CasaOS creates and pins the released image.
+# The project's own deploy/compose.yaml is for `docker compose up -d` in a checkout.
+#
+# The x-casaos blocks are extension fields: Docker Compose ignores them, CasaOS uses them to draw an app card.
+# Live camera capture and installation as an app need HTTPS: put your reverse proxy in front and terminate TLS
+# there; uploading photos from the native camera works over plain HTTP too.
+name: nevus
+
+services:
+  nevus:
+    image: ghcr.io/jalmena/nevus:0.1.0-alpha.1
+    container_name: nevus
+    restart: unless-stopped
+    ports:
+      # host:container. Change the host side if 8455 is taken; inside the container neVus listens on 8080.
+      - "8455:8080"
+    volumes:
+      # Everything neVus owns lives here: the database, the photographs, backups and the server secret.
+      - /DATA/AppData/nevus/data:/data
+    environment:
+      # Set to the user that owns the data directory (`id -u`, `id -g` on the host).
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "Europe/Madrid"
+      # Public hostnames the server should answer to (comma-separated). Private addresses, localhost and
+      # .local names are always accepted; unknown public names are refused to block DNS rebinding.
+      # NEVUS_ALLOWED_HOSTS: "nevus.example.com"
+      # External PostgreSQL instead of the built-in SQLite (the operator then backs up the database):
+      # NEVUS_DATABASE_URL: "postgresql+psycopg://nevus:password@db.example.com:5432/nevus"
+      # NEVUS_LOG_LEVEL: "info"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8080/healthz"]
+      interval: 30s
+      timeout: 5s
+      start_period: 15s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: "3.0"
+          memory: 3g
+x-casaos:
+  id: io.github.jalmena.nevus
+  main: nevus
+  index: /
+  port_map: "8455"
+  scheme: http
+  icon: https://cdn.jsdelivr.net/gh/jalmena/jalmena-appstore@gh-pages/apps/io.github.jalmena.nevus/assets/icon.svg
+  version: "0.1.0-alpha.1"
+  title:
+    en_US: neVus

@@ -1,9 +1,30 @@
 {
   "version": 2,
-  "updated_at": "2026-09-23T12:49:31Z",
-  "app_count": 1,
+  "updated_at": "2026-09-28T09:50:31Z",
+  "app_count": 2,
   "base_url": "https://cdn.jsdelivr.net/gh/jalmena/jalmena-appstore@gh-pages",
   "apps": [
+    {
+      "id": "io.github.jalmena.nevus",
+      "title": "neVus",
+      "tagline": "Because \"I think it was smaller\" is not data.",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "jalmena",
+      "developer": "jalmena",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/io.github.jalmena.nevus/assets/icon.svg",
+      "thumbnail": "/apps/io.github.jalmena.nevus/assets/thumbnail.webp",
+      "compose_url": "/apps/io.github.jalmena.nevus/docker-compose.yml",
+      "meta_url": "/apps/io.github.jalmena.nevus/meta.json",
+      "content_hash": "069ce459",
+      "version": "0.1.0-alpha.1"
+    },
     {
       "id": "io.github.jalmena.tabernacle",
       "title": "Tabernacle",
