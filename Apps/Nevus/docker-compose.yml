@@ -10,7 +10,7 @@ name: nevus
 
 services:
   nevus:
-    image: ghcr.io/jalmena/nevus:1.1.1
+    image: ghcr.io/jalmena/nevus:1.2.0
     container_name: nevus
     restart: unless-stopped
     ports:
@@ -79,7 +79,7 @@ x-casaos:
     - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/screenshot-1.png
     - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/screenshot-2.png
     - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/screenshot-3.png
-  version: "1.1.1"
+  version: "1.2.0"
   update_at: "2026-10-05"
   website: https://github.com/jalmena/nevus
   repo: https://github.com/jalmena/nevus
@@ -105,9 +105,9 @@ x-casaos:
         works over plain HTTP.
   release_notes:
     en_us: |
-      1.1.1: the first stable line, and an app that updates itself when the server does. Marks on a body map
-      with dated looks and scrubbed photographs; measurement against the reference card or a coin with its
-      uncertainty, and the shape and colour of each mark over time; comparison views and PDF reports for the
-      clinician; reminders by email, webhook, calendar feed or push notification; full-body sessions compared
-      region by region; a second factor, encrypted backups read back every week, and a trash. English, Spanish
-      and Portuguese.
+      1.2.0: the first stable line, with every screen laid out for a phone, a tablet and a desktop, and an app
+      that updates itself when the server does. Marks on a body map with dated looks and scrubbed photographs;
+      measurement against the reference card or a coin with its uncertainty, and the shape and colour of each
+      mark over time; comparison views and PDF reports for the clinician; reminders by email, webhook, calendar
+      feed or push notification; full-body sessions compared region by region; a second factor, encrypted
+      backups read back every week, and a trash. English, Spanish and Portuguese.
