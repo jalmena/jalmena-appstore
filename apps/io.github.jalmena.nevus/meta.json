@@ -12,7 +12,7 @@
     "/apps/io.github.jalmena.nevus/assets/screenshot-2.webp",
     "/apps/io.github.jalmena.nevus/assets/screenshot-3.webp"
   ],
-  "update_at": "2026-09-28",
+  "update_at": "2026-10-14",
   "website": "https://github.com/jalmena/nevus",
   "repo": "https://github.com/jalmena/nevus",
   "support": "https://github.com/jalmena/nevus/issues",
@@ -23,16 +23,16 @@
     "before_install": "Set PUID and PGID to the owner of /DATA/AppData/nevus/data. For live camera capture and installation as an\napp on your phone, serve neVus over HTTPS through your reverse proxy; uploading photos from the native camera\nworks over plain HTTP.\n"
   },
   "title": "neVus",
-  "release_note": "First alpha: accounts, persons, the body map, marks, dated visits with scrubbed photographs, English and Spanish. Measurement, reminders and reports come next. The data model may still change before 0.1.0.\n",
+  "release_note": "1.3.0: the interface redrawn as one quiet application. An app bar with the way back and one primary\naction within the thumb's reach; rows instead of cards; the occasional forms in sheets; the person's tools\nand the settings as pages of their own; a rail on the desktop. Marks on a body map with dated looks and\nscrubbed photographs; measurement against the reference card or a coin with its uncertainty, and the\nshape and colour of each mark over time; comparison views and PDF reports for the clinician; reminders by\nemail, webhook, calendar feed or push notification; full-body sessions compared region by region; a second\nfactor, encrypted backups read back every week, and a trash. English, Spanish and Portuguese.\n",
   "base_url": "https://cdn.jsdelivr.net/gh/jalmena/jalmena-appstore@gh-pages",
   "id": "io.github.jalmena.nevus",
-  "version": "0.1.0-alpha.1",
+  "version": "1.3.0",
   "categories": [
     "others"
   ],
   "min_memory": 0,
   "min_image_size": {
-    "amd64": 89216766,
-    "arm64": 91346352
+    "amd64": 188359462,
+    "arm64": 168815867
   }
 }
