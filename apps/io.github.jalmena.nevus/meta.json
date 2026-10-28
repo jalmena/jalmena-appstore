@@ -12,7 +12,7 @@
     "/apps/io.github.jalmena.nevus/assets/screenshot-2.webp",
     "/apps/io.github.jalmena.nevus/assets/screenshot-3.webp"
   ],
-  "update_at": "2026-10-15",
+  "update_at": "2026-10-28",
   "website": "https://github.com/jalmena/nevus",
   "repo": "https://github.com/jalmena/nevus",
   "support": "https://github.com/jalmena/nevus/issues",
@@ -23,16 +23,16 @@
     "before_install": "Set PUID and PGID to the owner of /DATA/AppData/nevus/data. For live camera capture and installation as an\napp on your phone, serve neVus over HTTPS through your reverse proxy; uploading photos from the native camera\nworks over plain HTTP.\n"
   },
   "title": "neVus",
-  "release_note": "1.4.0: photos taken with the reference card are normalised, flattened onto the card, upright and cropped\nto it at a known scale, so every card photo is the same picture and two visits compare at a glance; the\noriginal stays the record. The interface redrawn as one quiet application: an app bar with the way back\nand one primary action within the thumb's reach, rows instead of cards, forms in sheets, a rail on the\ndesktop. Marks on a body map with dated looks and scrubbed photographs; measurement against the card or a\ncoin with its uncertainty; comparison views and PDF reports for the clinician; reminders by email,\nwebhook, calendar feed or push notification; full-body sessions; a second factor, encrypted backups and\na trash. English, Spanish and Portuguese.\n",
+  "release_note": "1.5.1: a photo taken with the reference card shows the mark itself, cut from inside the card's window, in\nevery list, on the visit and in the lightbox, with the card and the original a tap away; two card photos\ncompare lined up on the mark, inside the window. Glare on the mark is flagged as a quality note. The card\ncan be printed in three dimensions, in two colours or in white with a marker. Reports show the mark large,\nwithout the card, and keep to what the clinician needs. Hands and feet tell palms from backs, and the\nselected zone is named. Marks on a body map with dated looks and scrubbed photographs; measurement against\nthe card or a coin with its uncertainty; comparison views and PDF reports; reminders by email, webhook,\ncalendar feed or push notification; full-body sessions; a second factor, encrypted backups and a trash.\nEnglish, Spanish and Portuguese. Photos from earlier versions get the mark's crop by themselves after\nthe upgrade.\n",
   "base_url": "https://cdn.jsdelivr.net/gh/jalmena/jalmena-appstore@gh-pages",
   "id": "io.github.jalmena.nevus",
-  "version": "1.4.0",
+  "version": "1.5.1",
   "categories": [
     "others"
   ],
   "min_memory": 0,
   "min_image_size": {
-    "amd64": 188366231,
-    "arm64": 168817141
+    "amd64": 188607186,
+    "arm64": 169018391
   }
 }
