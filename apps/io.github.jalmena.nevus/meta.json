@@ -23,16 +23,16 @@
     "before_install": "Set PUID and PGID to the owner of /DATA/AppData/nevus/data. For live camera capture and installation as an\napp on your phone, serve neVus over HTTPS through your reverse proxy; uploading photos from the native camera\nworks over plain HTTP.\n"
   },
   "title": "neVus",
-  "release_note": "1.5.1: a photo taken with the reference card shows the mark itself, cut from inside the card's window, in\nevery list, on the visit and in the lightbox, with the card and the original a tap away; two card photos\ncompare lined up on the mark, inside the window. Glare on the mark is flagged as a quality note. The card\ncan be printed in three dimensions, in two colours or in white with a marker. Reports show the mark large,\nwithout the card, and keep to what the clinician needs. Hands and feet tell palms from backs, and the\nselected zone is named. Marks on a body map with dated looks and scrubbed photographs; measurement against\nthe card or a coin with its uncertainty; comparison views and PDF reports; reminders by email, webhook,\ncalendar feed or push notification; full-body sessions; a second factor, encrypted backups and a trash.\nEnglish, Spanish and Portuguese. Photos from earlier versions get the mark's crop by themselves after\nthe upgrade.\n",
+  "release_note": "1.5.2: the printable reference card ships as one STL per piece, the right way up, with the neVus lockup\nraised on it and the height at which to change colour in its note.\n1.5.1: a photo taken with the reference card shows the mark itself, cut from inside the card's window, in\nevery list, on the visit and in the lightbox, with the card and the original a tap away; two card photos\ncompare lined up on the mark, inside the window. Glare on the mark is flagged as a quality note. The card\ncan be printed in three dimensions, in two colours or in white with a marker. Reports show the mark large,\nwithout the card, and keep to what the clinician needs. Hands and feet tell palms from backs, and the\nselected zone is named. Marks on a body map with dated looks and scrubbed photographs; measurement against\nthe card or a coin with its uncertainty; comparison views and PDF reports; reminders by email, webhook,\ncalendar feed or push notification; full-body sessions; a second factor, encrypted backups and a trash.\nEnglish, Spanish and Portuguese. Photos from earlier versions get the mark's crop by themselves after\nthe upgrade.\n",
   "base_url": "https://cdn.jsdelivr.net/gh/jalmena/jalmena-appstore@gh-pages",
   "id": "io.github.jalmena.nevus",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "categories": [
     "others"
   ],
   "min_memory": 0,
   "min_image_size": {
-    "amd64": 188607186,
-    "arm64": 169018391
+    "amd64": 188610371,
+    "arm64": 169022248
   }
 }
