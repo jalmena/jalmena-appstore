@@ -10,7 +10,7 @@ name: nevus
 
 services:
   nevus:
-    image: ghcr.io/jalmena/nevus:1.5.0
+    image: ghcr.io/jalmena/nevus:1.5.1
     container_name: nevus
     restart: unless-stopped
     ports:
@@ -79,7 +79,7 @@ x-casaos:
     - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/screenshot-1.png
     - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/screenshot-2.png
     - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/screenshot-3.png
-  version: "1.5.0"
+  version: "1.5.1"
   update_at: "2026-10-28"
   website: https://github.com/jalmena/nevus
   repo: https://github.com/jalmena/nevus
@@ -105,7 +105,7 @@ x-casaos:
         works over plain HTTP.
   release_notes:
     en_us: |
-      1.5.0: a photo taken with the reference card shows the mark itself, cut from inside the card's window, in
+      1.5.1: a photo taken with the reference card shows the mark itself, cut from inside the card's window, in
       every list, on the visit and in the lightbox, with the card and the original a tap away; two card photos
       compare lined up on the mark, inside the window. Glare on the mark is flagged as a quality note. The card
       can be printed in three dimensions, in two colours or in white with a marker. Reports show the mark large,
@@ -113,4 +113,5 @@ x-casaos:
       selected zone is named. Marks on a body map with dated looks and scrubbed photographs; measurement against
       the card or a coin with its uncertainty; comparison views and PDF reports; reminders by email, webhook,
       calendar feed or push notification; full-body sessions; a second factor, encrypted backups and a trash.
-      English, Spanish and Portuguese.
+      English, Spanish and Portuguese. Photos from earlier versions get the mark's crop by themselves after
+      the upgrade.
