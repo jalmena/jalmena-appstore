@@ -10,7 +10,7 @@ name: nevus
 
 services:
   nevus:
-    image: ghcr.io/jalmena/nevus:1.4.0
+    image: ghcr.io/jalmena/nevus:1.5.0
     container_name: nevus
     restart: unless-stopped
     ports:
@@ -79,8 +79,8 @@ x-casaos:
     - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/screenshot-1.png
     - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/screenshot-2.png
     - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/screenshot-3.png
-  version: "1.4.0"
-  update_at: "2026-10-15"
+  version: "1.5.0"
+  update_at: "2026-10-28"
   website: https://github.com/jalmena/nevus
   repo: https://github.com/jalmena/nevus
   support: https://github.com/jalmena/nevus/issues
@@ -105,11 +105,12 @@ x-casaos:
         works over plain HTTP.
   release_notes:
     en_us: |
-      1.4.0: photos taken with the reference card are normalised, flattened onto the card, upright and cropped
-      to it at a known scale, so every card photo is the same picture and two visits compare at a glance; the
-      original stays the record. The interface redrawn as one quiet application: an app bar with the way back
-      and one primary action within the thumb's reach, rows instead of cards, forms in sheets, a rail on the
-      desktop. Marks on a body map with dated looks and scrubbed photographs; measurement against the card or a
-      coin with its uncertainty; comparison views and PDF reports for the clinician; reminders by email,
-      webhook, calendar feed or push notification; full-body sessions; a second factor, encrypted backups and
-      a trash. English, Spanish and Portuguese.
+      1.5.0: a photo taken with the reference card shows the mark itself, cut from inside the card's window, in
+      every list, on the visit and in the lightbox, with the card and the original a tap away; two card photos
+      compare lined up on the mark, inside the window. Glare on the mark is flagged as a quality note. The card
+      can be printed in three dimensions, in two colours or in white with a marker. Reports show the mark large,
+      without the card, and keep to what the clinician needs. Hands and feet tell palms from backs, and the
+      selected zone is named. Marks on a body map with dated looks and scrubbed photographs; measurement against
+      the card or a coin with its uncertainty; comparison views and PDF reports; reminders by email, webhook,
+      calendar feed or push notification; full-body sessions; a second factor, encrypted backups and a trash.
+      English, Spanish and Portuguese.
