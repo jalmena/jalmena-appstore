@@ -10,7 +10,7 @@ name: nevus
 
 services:
   nevus:
-    image: ghcr.io/jalmena/nevus:1.5.2
+    image: ghcr.io/jalmena/nevus:1.6.0
     container_name: nevus
     restart: unless-stopped
     ports:
@@ -79,8 +79,8 @@ x-casaos:
     - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/screenshot-1.png
     - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/screenshot-2.png
     - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/screenshot-3.png
-  version: "1.5.2"
-  update_at: "2026-10-28"
+  version: "1.6.0"
+  update_at: "2026-10-29"
   website: https://github.com/jalmena/nevus
   repo: https://github.com/jalmena/nevus
   support: https://github.com/jalmena/nevus/issues
@@ -105,6 +105,9 @@ x-casaos:
         works over plain HTTP.
   release_notes:
     en_us: |
+      1.6.0: neVus speaks nineteen languages, from Spanish and Catalan to Japanese and Arabic, across the interface,
+      the notifications, the reports and the printable card, whose sheet and print note come in your language. The
+      3D-printable card gains rounded corners, a frame line, a larger neVus mark and spare grey squares to glue on.
       1.5.2: the printable reference card ships as one STL per piece, the right way up, with the neVus lockup
       raised on it and the height at which to change colour in its note.
       1.5.1: a photo taken with the reference card shows the mark itself, cut from inside the card's window, in
