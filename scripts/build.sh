@@ -25,7 +25,6 @@ rm -rf "$root/dist"
 	--digest-cache-file "$root/.cache/build_appstore/image-digest-cache.json"
 
 # The zip for CasaOS, which subscribes to an archive rather than to store.json.
-# It ships next to the v2 output so one branch serves both kinds of client, under
-# the store's own name and under the historical name existing installations follow.
-(cd "$root" && zip -qr dist/appstore.zip Apps category-list.json && cp dist/appstore.zip dist/tabernacle-appstore.zip)
+# It ships next to the v2 output so one branch serves both kinds of client.
+(cd "$root" && zip -qr dist/appstore.zip Apps category-list.json)
 echo "dist/appstore.zip $(du -h "$root/dist/appstore.zip" | cut -f1)"

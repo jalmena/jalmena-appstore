@@ -30,10 +30,8 @@ jobs:
           cache-file: .cache/build_appstore/image-size-cache.json
           digest-cache-file: .cache/build_appstore/image-digest-cache.json
 
-      - name: Pack the archives CasaOS subscribes to
-        run: |
-          zip -qr dist/appstore.zip Apps category-list.json
-          cp dist/appstore.zip dist/tabernacle-appstore.zip
+      - name: Pack the archive CasaOS subscribes to
+        run: zip -qr dist/appstore.zip Apps category-list.json
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4

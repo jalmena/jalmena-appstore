@@ -19,11 +19,6 @@ In CasaOS: **App Store → the three dots → Add Source**, and paste
 https://raw.githubusercontent.com/jalmena/jalmena-appstore/gh-pages/appstore.zip
 ```
 
-The address existing installations were given,
-`https://raw.githubusercontent.com/jalmena/tabernacle-appstore/gh-pages/tabernacle-appstore.zip`,
-keeps working: GitHub serves the renamed repository under its old name, and the
-archive is published under both file names. Nothing needs re-adding.
-
 On ZimaOS 1.7 or later, or any client that speaks version 2 of the protocol,
 add the store manifest instead:
 
