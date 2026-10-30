@@ -10,7 +10,7 @@ name: nevus
 
 services:
   nevus:
-    image: ghcr.io/jalmena/nevus:1.6.0@sha256:e28e942d6be252a0f0fdd5a75ec52f219a0e05059cd4a26785bff7cce406232b
+    image: ghcr.io/jalmena/nevus:1.7.0@sha256:2211973a2c4982ff9187fe6443343463a9b8e506adad0f023cf4ba37d34dde25
     container_name: nevus
     restart: unless-stopped
     ports:
@@ -48,6 +48,6 @@ x-casaos:
   port_map: "8455"
   scheme: http
   icon: https://cdn.jsdelivr.net/gh/jalmena/jalmena-appstore@gh-pages/apps/io.github.jalmena.nevus/assets/icon.svg
-  version: "1.6.0"
+  version: "1.7.0"
   title:
     en_US: neVus
