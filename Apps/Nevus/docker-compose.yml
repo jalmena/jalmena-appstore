@@ -10,7 +10,7 @@ name: nevus
 
 services:
   nevus:
-    image: ghcr.io/jalmena/nevus:1.6.0
+    image: ghcr.io/jalmena/nevus:1.7.0
     container_name: nevus
     restart: unless-stopped
     ports:
@@ -79,8 +79,8 @@ x-casaos:
     - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/screenshot-1.png
     - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/screenshot-2.png
     - https://raw.githubusercontent.com/jalmena/jalmena-appstore/main/Apps/Nevus/screenshot-3.png
-  version: "1.6.0"
-  update_at: "2026-10-29"
+  version: "1.7.0"
+  update_at: "2026-10-31"
   website: https://github.com/jalmena/nevus
   repo: https://github.com/jalmena/nevus
   support: https://github.com/jalmena/nevus/issues
@@ -105,6 +105,10 @@ x-casaos:
         works over plain HTTP.
   release_notes:
     en_us: |
+      1.7.0: a new body map with smooth outlines, limbs in bands you can name, heels and ears to tap, and
+      landmarks to help place a mark; your own anatomy drawn if you set it in the profile; every page redesigned,
+      with a mark's visits on a time line; a shorter report; and a larger neVus mark on the 3D-printable card,
+      with a grey square printed by a filament change.
       1.6.0: neVus speaks nineteen languages, from Spanish and Catalan to Japanese and Arabic, across the interface,
       the notifications, the reports and the printable card, whose sheet and print note come in your language. The
       3D-printable card gains rounded corners, a frame line, a larger neVus mark and spare grey squares to glue on.
