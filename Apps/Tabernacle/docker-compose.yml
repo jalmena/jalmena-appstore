@@ -13,7 +13,7 @@ name: tabernacle
 
 services:
   tabernacle:
-    image: ghcr.io/jalmena/tabernacle:0.7.0
+    image: ghcr.io/jalmena/tabernacle:0.8.0
     container_name: tabernacle
     restart: unless-stopped
 
@@ -97,8 +97,8 @@ x-casaos:
   architectures:
     - amd64
     - arm64
-  version: "0.7.0"
-  update_at: "2026-10-30"
+  version: "0.8.0"
+  update_at: "2026-11-11"
   website: https://github.com/jalmena/tabernacle
   repo: https://github.com/jalmena/tabernacle
   support: https://github.com/jalmena/tabernacle/issues
@@ -118,7 +118,7 @@ x-casaos:
 
       Press Play and the sheet scrolls itself, big enough to read from a stand, so your hands can stay on the guitar. A song full of barre chords is told where to put a capo so it is not: same sound, easier shapes. Draw a shape on the fretboard and hear it, on nylon, steel or a distorted electric, and be told how hard it is to hold.
 
-      Add a song by filling in its fields a section at a time, or bring it as you have it, with the chords on the line above the words: paste it, load it, or import a folder of them at once, and it is read into sections for you to check. Join, split and move sections from the keyboard.
+      Write a song a section at a time, with every chord floating above its syllable: press above a word to put one there, drag it to move it, press it to change it. Or bring the song as you have it, with the chords on the line above the words: paste it, load it, or import a folder of them at once, and it is read into sections for you to check. Join, split and move sections from the keyboard.
 
       Reading needs no account. Changing anything does, once you have made one. Nineteen interface languages, note names as C-D-E or Do-Re-Mi, and a light or dark theme, all chosen per person.
 
@@ -133,4 +133,4 @@ x-casaos:
 
   release_notes:
     en_us: |
-      Songs come in the way they are written down: paste or import sheets with the chords above the words and they are read into sections. The editor joins, splits and moves sections from the keyboard, and the chord page draws the hand that holds a shape.
+      Chords sit above the words in the editor: press above a syllable to put one there, drag it to move it, press it to change it. The key and the tuning are chosen from a list, the artist and the genre offer what the collection has, and leaving with changes not yet saved asks first.
