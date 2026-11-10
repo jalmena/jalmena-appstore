@@ -1,2 +1,2 @@
 ghcr.io/jalmena/nevus:1.7.1 sha256:8970e6afbacbc653bf2b4d9889f02caadbe063ab38b98ddbf2c37197cf596322
-ghcr.io/jalmena/tabernacle:0.7.0 sha256:d6d019f4fd32b823811fc1ef9bddb84eecaa1660157368a186e62431459d27a2
+ghcr.io/jalmena/tabernacle:0.8.0 sha256:d4d905ff13a676ea22f04c76ef9390ae27867bb98843b7c7179cc9a81b3a22fc
